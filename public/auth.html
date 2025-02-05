@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona App - Authentication</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            loginForm.classList.toggle('hidden');
+            signupForm.classList.toggle('hidden');
+        }
+
+        function validateForm(isSignup) {
+            const email = document.getElementById(isSignup ? 'signup-email' : 'login-email').value;
+            const password = document.getElementById(isSignup ? 'signup-password' : 'login-password').value;
+            const phone = isSignup ? document.getElementById('signup-phone').value : null;
+
+            // Basic validation
+            if (!email.includes('@')) {
+                alert('Please enter a valid email address');
+                return false;
+            }
+
+            if (password.length < 6) {
+                alert('Password must be at least 6 characters long');
+                return false;
+            }
+
+            if (isSignup && (!phone || phone.length < 10)) {
+                alert('Please enter a valid phone number');
+                return false;
+            }
+
+            // Here you would typically send data to backend
+            alert(isSignup ? 'Signup successful!' : 'Login successful!');
+            return true;
+        }
+    </script>
+</head>
+<body class="bg-yellow-50 min-h-screen flex items-center justify-center">
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
+        <!-- Login Form -->
+        <form id="login-form" class="space-y-6">
+            <div class="text-center">
+                <i class="fas fa-chart-line text-4xl text-black mb-4"></i>
+                <h2 class="text-2xl font-bold text-black">Login to Mona App</h2>
+            </div>
+            
+            <div>
+                <label for="login-email" class="block text-gray-700 mb-2">Email</label>
+                <input 
+                    type="email" 
+                    id="login-email" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+            
+            <div>
+                <label for="login-password" class="block text-gray-700 mb-2">Password</label>
+                <input 
+                    type="password" 
+                    id="login-password" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+            
+            <button 
+                type="button" 
+                onclick="validateForm(false)"
+                class="w-full bg-black text-yellow-400 py-2 rounded-md hover:bg-yellow-800 transition duration-300"
+            >
+                Login
+            </button>
+            
+            <div class="text-center">
+                <p class="text-gray-600">
+                    Don't have an account? 
+                    <a href="#" onclick="toggleForm()" class="text-black hover:underline">Sign Up</a>
+                </p>
+            </div>
+        </form>
+
+        <!-- Signup Form -->
+        <form id="signup-form" class="space-y-6 hidden">
+            <div class="text-center">
+                <i class="fas fa-user-plus text-4xl text-black mb-4"></i>
+                <h2 class="text-2xl font-bold text-black">Create Your Account</h2>
+            </div>
+            
+            <div>
+                <label for="signup-phone" class="block text-gray-700 mb-2">Phone Number</label>
+                <input 
+                    type="tel" 
+                    id="signup-phone" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Enter your phone number"
+                    required
+                >
+            </div>
+            
+            <div>
+                <label for="signup-email" class="block text-gray-700 mb-2">Email</label>
+                <input 
+                    type="email" 
+                    id="signup-email" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Enter your email"
+                    required
+                >
+            </div>
+            
+            <div>
+                <label for="signup-password" class="block text-gray-700 mb-2">Password</label>
+                <input 
+                    type="password" 
+                    id="signup-password" 
+                    class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    placeholder="Create a password"
+                    required
+                >
+            </div>
+            
+            <button 
+                type="button" 
+                onclick="validateForm(true)"
+                class="w-full bg-black text-yellow-400 py-2 rounded-md hover:bg-yellow-800 transition duration-300"
+            >
+                Sign Up
+            </button>
+            
+            <div class="text-center">
+                <p class="text-gray-600">
+                    Already have an account? 
+                    <a href="#" onclick="toggleForm()" class="text-black hover:underline">Login</a>
+                </p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

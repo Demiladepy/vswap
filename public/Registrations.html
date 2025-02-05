@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona App - Shop Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script>
+        // Simulated shop data (would come from backend in real app)
+        const shops = [];
+
+        function registerShop(event) {
+            event.preventDefault();
+            const shopName = document.getElementById('shop-name').value;
+            const shopType = document.getElementById('shop-type').value;
+            const shopLocation = document.getElementById('shop-location').value;
+
+            if (!shopName || !shopType || !shopLocation) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const newShop = {
+                id: shops.length + 1,
+                name: shopName,
+                type: shopType,
+                location: shopLocation
+            };
+
+            shops.push(newShop);
+            updateShopList();
+            event.target.reset();
+            alert('Shop registered successfully!');
+        }
+
+        function updateShopList() {
+            const shopListContainer = document.getElementById('shop-list');
+            shopListContainer.innerHTML = shops.map(shop => `
+                <div class="bg-yellow-50 p-4 rounded-md mb-2 flex justify-between items-center">
+                    <div>
+                        <h3 class="font-bold">${shop.name}</h3>
+                        <p class="text-sm text-gray-600">${shop.type} - ${shop.location}</p>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function selectAttendantShop(event) {
+            event.preventDefault();
+            const selectedShopId = document.getElementById('shop-select').value;
+            if (selectedShopId) {
+                const selectedShop = shops.find(shop => shop.id === parseInt(selectedShopId));
+                alert(`Selected Shop: ${selectedShop.name}`);
+                // In real app, would navigate to attendant dashboard with shop context
+            } else {
+                alert('Please select a shop');
+            }
+        }
+    </script>
+</head>
+<body class="bg-yellow-50">
+    <!-- Shop Owner Registration -->
+    <div class="container mx-auto p-6">
+        <div class="bg-white shadow-lg rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-black mb-6 text-center">
+                <i class="fas fa-store mr-3"></i>Register Your Shop
+            </h2>
+            
+            <form onsubmit="registerShop(event)" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Shop Name</label>
+                    <input 
+                        type="text" 
+                        id="shop-name" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        placeholder="Enter shop name"
+                        required
+                    >
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">Shop Type</label>
+                    <select 
+                        id="shop-type" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        required
+                    >
+                        <option value="">Select Shop Type</option>
+                        <option value="Retail">Retail</option>
+                        <option value="Restaurant">Restaurant</option>
+                        <option value="Grocery">Grocery</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label class="block text-gray-700 mb-2">Shop Location</label>
+                    <input 
+                        type="text" 
+                        id="shop-location" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        placeholder="Enter shop address"
+                        required
+                    >
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="w-full bg-black text-yellow-400 py-2 rounded-md hover:bg-yellow-800 transition duration-300"
+                >
+                    Register Shop
+                </button>
+            </form>
+
+            <div class="mt-6">
+                <h3 class="text-xl font-bold mb-4">Registered Shops</h3>
+                <div id="shop-list" class="space-y-2">
+                    <p class="text-gray-500">No shops registered yet</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attendant Shop Selection -->
+    <div class="container mx-auto p-6">
+        <div class="bg-white shadow-lg rounded-lg p-8">
+            <h2 class="text-2xl font-bold text-black mb-6 text-center">
+                <i class="fas fa-user-tag mr-3"></i>Select Your Shop
+            </h2>
+            
+            <form onsubmit="selectAttendantShop(event)" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700 mb-2">Available Shops</label>
+                    <select 
+                        id="shop-select" 
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md"
+                        required
+                    >
+                        <option value="">Select a Shop</option>
+                    </select>
+                </div>
+                
+                <button 
+                    type="submit" 
+                    class="w-full bg-black text-yellow-400 py-2 rounded-md hover:bg-yellow-800 transition duration-300"
+                >
+                    Select Shop
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Dynamically populate shop selection dropdown
+        function populateShopSelect() {
+            const shopSelect = document.getElementById('shop-select');
+            shopSelect.innerHTML = `<option value="">Select a Shop</option>
+                ${shops.map(shop => `
+                    <option value="${shop.id}">${shop.name} - ${shop.type}</option>
+                `).join('')}`;
+        }
+
+        // Update shop select on page load and after registration
+        document.addEventListener('DOMContentLoaded', populateShopSelect);
+    </script>
+</body>
+</html>

@@ -32,8 +32,20 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+app.get('/auth', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'auth.html'));
+  });
+
+app.get('/usertype', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'UserSelectorPage.html'));
+  });
+
+  app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'Registrations.html'));
+  });
+
 app.get('/dashboard', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'dashboard.html'));
+  res.sendFile(path.join(__dirname, 'public', 'Dashboard.html'));
 });
 
 // Utils placeholder (e.g., helper functions)
