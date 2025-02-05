@@ -1,7 +1,10 @@
 // routes/auth.js
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const path = require('path');
 const User = require('../models/User');
+
+
 const router = express.Router();
 
 router.post('/signup', async (req, res) => {
