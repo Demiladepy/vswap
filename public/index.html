@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona App - Smart Sales Tracking for SMEs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white text-black font-sans">
+    <!-- Navigation -->
+    <nav class="bg-yellow-400 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-chart-line text-black text-2xl mr-3"></i>
+                <span class="text-2xl font-bold text-black">Mona App</span>
+            </div>
+            <div class="space-x-4">
+                <a href="#features" class="text-black hover:text-yellow-800 transition duration-300">Features</a>
+                <a href="#pricing" class="text-black hover:text-yellow-800 transition duration-300">Pricing</a>
+                <a href="index.html" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300">Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="bg-yellow-50 py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 text-black">
+                    Smart Sales Tracking for Small Businesses
+                </h1>
+                <p class="text-lg mb-6 text-gray-800">
+                    Simplify your sales management, gain insights, and grow your business with Mona App.
+                </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="bg-black text-yellow-400 px-6 py-3 rounded hover:bg-yellow-800 transition duration-300">
+                        <i class="fas fa-rocket mr-2"></i>Get Started
+                    </a>
+                    <a href="#features" class="border-2 border-black text-black px-6 py-3 rounded hover:bg-yellow-50 transition duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="/api/placeholder/500/400" alt="Sales Tracking Dashboard" class="rounded-lg shadow-2xl">
+            </div>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-black">
+                Why Choose Mona App?
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-yellow-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-chart-pie text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Real-time Analytics</h3>
+                    <p class="text-gray-700">Get instant insights into your sales performance with our intuitive dashboard.</p>
+                </div>
+                <div class="bg-yellow-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-lock text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Secure & Reliable</h3>
+                    <p class="text-gray-700">Your data is protected with advanced encryption and secure cloud storage.</p>
+                </div>
+                <div class="bg-yellow-50 p-6 rounded-lg text-center">
+                    <i class="fas fa-mobile-alt text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Easy to Use</h3>
+                    <p class="text-gray-700">No technical skills required. Simple, intuitive interface for everyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-black">
+                Affordable Pricing
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-bold mb-4 text-black">Basic</h3>
+                    <p class="text-4xl font-bold mb-4 text-black">$9<span class="text-sm">/month</span></p>
+                    <ul class="mb-6 space-y-2 text-gray-700">
+                        <li>Up to 2 Shops</li>
+                        <li>Basic Analytics</li>
+                        <li>Email Support</li>
+                    </ul>
+                    <a href="#" class="bg-black text-yellow-400 px-6 py-3 rounded hover:bg-yellow-800 transition duration-300 block">Choose Basic</a>
+                </div>
+                <div class="bg-yellow-400 p-6 rounded-lg shadow-xl text-center transform scale-105">
+                    <h3 class="text-xl font-bold mb-4 text-black">Pro</h3>
+                    <p class="text-4xl font-bold mb-4 text-black">$29<span class="text-sm">/month</span></p>
+                    <ul class="mb-6 space-y-2 text-black">
+                        <li>Up to 5 Shops</li>
+                        <li>Advanced Analytics</li>
+                        <li>Priority Support</li>
+                        <li>AI Sales Predictions</li>
+                    </ul>
+                    <a href="#" class="bg-black text-yellow-400 px-6 py-3 rounded hover:bg-yellow-800 transition duration-300 block">Choose Pro</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h3 class="text-xl font-bold mb-4 text-black">Enterprise</h3>
+                    <p class="text-4xl font-bold mb-4 text-black">$99<span class="text-sm">/month</span></p>
+                    <ul class="mb-6 space-y-2 text-gray-700">
+                        <li>Unlimited Shops</li>
+                        <li>Full Analytics Suite</li>
+                        <li>Dedicated Support</li>
+                        <li>Custom Integrations</li>
+                    </ul>
+                    <a href="#" class="bg-black text-yellow-400 px-6 py-3 rounded hover:bg-yellow-800 transition duration-300 block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-yellow-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Mona App. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
