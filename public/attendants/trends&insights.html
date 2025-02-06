@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona App - Trends & Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white text-black font-sans">
+    <!-- Navigation -->
+    <nav class="bg-yellow-400 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-chart-line text-black text-2xl mr-3"></i>
+                <span class="text-2xl font-bold text-black">Trends & Insights</span>
+            </div>
+            <div class="space-x-4">
+                <a href="dashboard.html" class="text-black hover:text-yellow-800 transition duration-300">Dashboard</a>
+                <a href="reports.html" class="text-black hover:text-yellow-800 transition duration-300">Reports</a>
+                <a href="index.html" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Trends & Insights Section -->
+    <section class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-black">Sales Trends & Insights</h2>
+
+            <!-- Best-Selling Products -->
+            <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+                <h3 class="text-xl font-bold mb-4">Best-Selling Products</h3>
+                <ul class="list-disc list-inside text-gray-700">
+                    <li>Product A - 500 units sold</li>
+                    <li>Product B - 350 units sold</li>
+                    <li>Product C - 275 units sold</li>
+                </ul>
+            </div>
+
+            <!-- Sales Graphs -->
+            <div class="bg-white p-2 rounded-lg shadow-lg mb-8">
+                <h3 class="text-xl font-bold mb-4">Sales Trends</h3>
+                <canvas id="salesChart"></canvas>
+            </div>
+
+            <!-- Customer Purchase Behavior -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Customer Purchase Behavior</h3>
+                <p class="text-gray-700">Customers tend to buy more in the evenings and during promotional events.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Sales Chart Data
+        const ctx = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+                datasets: [{
+                    label: 'Sales Over Time',
+                    data: [10, 20, 30, 40, 50, 60, 70],
+                    borderColor: 'rgba(255, 193, 7, 1)',
+                    backgroundColor: 'rgba(255, 193, 7, 0.2)',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="bg-black text-yellow-400 py-8 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Mona App. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
