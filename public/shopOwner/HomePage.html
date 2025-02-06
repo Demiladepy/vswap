@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Owner Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body class="bg-yellow-50">
+    <!-- Dashboard Container -->
+    <div class="flex">
+        <!-- Sidebar Section -->
+        <div class="w-64 bg-black text-white p-6 min-h-screen">
+            <div class="mb-10 text-center">
+                <h2 class="text-2xl font-semibold text-yellow-400">Shop Dashboard</h2>
+            </div>
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="#sales-log" class="text-gray-300 hover:text-yellow-400 flex items-center space-x-2 transition-colors duration-200"><i class="fas fa-chart-line"></i><span>Log Sales</span></a></li>
+                    <li><a href="#add-attendant" class="text-gray-300 hover:text-yellow-400 flex items-center space-x-2 transition-colors duration-200"><i class="fas fa-user-plus"></i><span>Add Attendant</span></a></li>
+                    <li><a href="#transactions" class="text-gray-300 hover:text-yellow-400 flex items-center space-x-2 transition-colors duration-200"><i class="fas fa-dollar-sign"></i><span>View Transactions</span></a></li>
+                    <li><a href="#expenses" class="text-gray-300 hover:text-yellow-400 flex items-center space-x-2 transition-colors duration-200"><i class="fas fa-credit-card"></i><span>View Expenses</span></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="flex-1 p-8">
+            <h1 class="text-3xl font-bold text-black mb-6">Shop Owner Dashboard</h1>
+
+            <!-- Sales Log Section -->
+            <section id="sales-log" class="mb-12">
+                <h2 class="text-xl font-semibold text-black mb-4">Log Sales</h2>
+                <form id="log-sales-form" class="space-y-6 bg-white p-6 rounded-lg shadow-lg border-2 border-yellow-400">
+                    <div class="flex flex-col space-y-4">
+                        <input type="number" id="sales-amount" class="p-3 rounded border-2 border-yellow-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Sales Amount" required>
+                        <input type="text" id="sales-description" class="p-3 rounded border-2 border-yellow-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Sales Description" required>
+                        <button type="submit" class="bg-black text-white p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200 w-full">Log Sale</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Add Attendant Section -->
+            <section id="add-attendant" class="mb-12">
+                <h2 class="text-xl font-semibold text-black mb-4">Add Attendant</h2>
+                <form id="add-attendant-form" class="space-y-6 bg-white p-6 rounded-lg shadow-lg border-2 border-yellow-400">
+                    <div class="flex flex-col space-y-4">
+                        <input type="text" id="attendant-name" class="p-3 rounded border-2 border-yellow-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Attendant Name" required>
+                        <input type="text" id="attendant-role" class="p-3 rounded border-2 border-yellow-400 w-full focus:outline-none focus:ring-2 focus:ring-yellow-400" placeholder="Role" required>
+                        <button type="submit" class="bg-black text-white p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200 w-full">Add Attendant</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Transactions Section -->
+            <section id="transactions" class="mb-12">
+                <h2 class="text-xl font-semibold text-black mb-4">View Transactions</h2>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-yellow-400">
+                    <button id="view-transactions" class="bg-black text-white p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200 w-full">View Transactions</button>
+                    <div id="transaction-list" class="mt-6 space-y-4">
+                        <!-- Transaction details will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expenses Section -->
+            <section id="expenses" class="mb-12">
+                <h2 class="text-xl font-semibold text-black mb-4">View Expenses</h2>
+                <div class="bg-white p-6 rounded-lg shadow-lg border-2 border-yellow-400">
+                    <button id="view-expenses" class="bg-black text-white p-3 rounded-lg hover:bg-yellow-400 hover:text-black transition-colors duration-200 w-full">View Expenses</button>
+                    <div id="expense-list" class="mt-6 space-y-4">
+                        <!-- Expense details will be dynamically added here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

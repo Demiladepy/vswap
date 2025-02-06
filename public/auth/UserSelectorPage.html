@@ -32,29 +32,107 @@
     </div>
 
     <script>
-        async function selectRole(role) {
-            const email = localStorage.getItem('email'); // Store email in localStorage for role assignment
+        // async function selectRole(role) {
+        //     const email = localStorage.getItem('email'); // Store email in localStorage for role assignment
 
-            if (!email) {
-                alert('Please sign up first!');
-                return;
-            }
+        //     if (!email) {
+        //         alert('Please sign up first!');
+        //         return;
+        //     }
 
-            // Send the selected role to the backend to update the user's role
-            const response = await fetch('/api/update-role', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email, role })
-            });
+        //     // Send the selected role to the backend to update the user's role
+        //     const response = await fetch('/api/update-role', {
+        //         method: 'POST',
+        //         headers: { 'Content-Type': 'application/json' },
+        //         body: JSON.stringify({ email, role })
+        //     });
 
-            const data = await response.json();
+        //     const data = await response.json();
 
-            if (data.success) {
-                window.location.href = role === 'shop-owner' ? '/shop-owner' : '/attendant';
-            } else {
-                alert('Failed to update role');
-            }
+        //     if (data.success) {
+        //         window.location.href = role === 'shop-owner' ? '/shop-owner' : '/attendant';
+        //     } else {
+        //         alert('Failed to update role');
+        //     }
+        // }
+
+//         async function selectRole(role) {
+//     let email = localStorage.getItem('email');  // Try to get email from localStorage
+
+//     if (!email) {
+//         // If email is not in localStorage, try to get it from the token
+//         const token = localStorage.getItem('token');
+//         if (token) {
+//             try {
+//                 const payload = JSON.parse(atob(token.split('.')[1])); // Decode JWT token
+//                 email = payload.email;
+//                 localStorage.setItem('email', email);  // Store email in localStorage
+//             } catch (error) {
+//                 console.error('Error decoding token:', error);
+//                 alert('Error decoding token.');
+//                 return;
+//             }
+//         }
+//     }
+
+//     if (!email) {
+//         alert('Please sign up first!');
+//         return;
+//     }
+
+//     try {
+//         // Send the selected role to the backend to update the user's role
+//         const response = await fetch('http://localhost:5000/api/auth/update-role', {
+//             method: 'POST',
+//             headers: { 'Content-Type': 'application/json' },
+//             body: JSON.stringify({ email, role })
+//         });
+
+//         const data = await response.json();
+
+//         if (response.ok && data.success) {
+//             window.location.href = role === 'shop-owner' ? '/shopowner/dashboard' : '/attendant/dashboard';
+//         } else {
+//             console.error('Failed to update role:', data);
+//             alert('Failed to update role');
+//         }
+//     } catch (error) {
+//         console.error('Error during role update:', error);
+//         alert('Failed to update role');
+//     }
+// }
+
+async function selectRole(role) {
+    // We won't fetch the email from localStorage anymore. The backend will manage it via session.
+    
+    try {
+        // Send the selected role to the backend to update the user's role
+        const response = await fetch('http://localhost:5000/api/auth/update-role', {
+            method: 'POST',
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${localStorage.getItem('token')}`  // Use token for authentication
+            },
+            body: JSON.stringify({ role })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            // Redirect user based on the role
+            window.location.href = role === 'shop-owner' ? '/shopowner/dashboard' : '/attendant/dashboard';
+        } else {
+            console.error('Failed to update role:', data);
+            alert('Failed to update role');
         }
+    } catch (error) {
+        console.error('Error during role update:', error);
+        alert('Failed to update role');
+    }
+}
+
+
+
     </script>
 </body>
 </html>

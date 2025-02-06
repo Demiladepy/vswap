@@ -8,6 +8,11 @@ const superAdminRoutes = require('./routes/superAdminRoutes');
 const attendantRoutes = require('./routes/attendantRoutes');
 const shopOwnerRoutes = require('./routes/shopOwnerRoutes');
 const authRoutess = require('./routes/authRoutes');
+const session = require('express-session');
+
+
+
+// Other routes...
 
 // Load environment variables
 dotenv.config();
@@ -17,10 +22,26 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
+// Middleware setup
+app.use(session({
+  secret: 'your_secret_key', // This can be any string
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Set to true if using HTTPS
+}));
+
+
+
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+// app.use(cors({
+//   origin: '*', // Allow requests from any origin (adjust as necessary)
+//   methods: ['GET', 'POST'],
+//   allowedHeaders: ['Content-Type'],
+// }
+// ));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {

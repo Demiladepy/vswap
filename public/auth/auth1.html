@@ -149,24 +149,26 @@
             return true;
         }
 
-async function signupSubmit(email, password, phone) {
-    try {
-        const response = await fetch('/api/auth/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password, phone_number: phone }), // Change 'phone' to 'phone_number'
-        });
+        async function signupSubmit(email, password, phone) {
+        try {
+            const response = await fetch('/api/auth/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ phone, email, password }), // Send phone number, email, and password
+            });
 
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.message);
+            const data = await response.json();
+            if (!response.ok) throw new Error(data.message);
 
-        alert('Signup successful!');
-        window.location.href = '/auth/role-selection';
-    } catch (error) {
-        alert(error.message);
+            alert('Signup successful!');
+            window.location.href = '/role-selection'; // Redirect to 'Select Your Role' page
+
+        } catch (error) {
+            alert(error.message);
+        }
     }
-}
-
 
 //         async function signupSubmit(email, password, phone) {
 //     try {
@@ -189,27 +191,6 @@ async function signupSubmit(email, password, phone) {
 //         alert(error.message);
 //     }
 // }
-// async function loginSubmit(email, password) {
-//     try {
-//         const response = await fetch('/api/auth/login', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//             },
-//             body: JSON.stringify({ email, password }),
-//         });
-
-//         const data = await response.json();
-//         if (!response.ok) throw new Error(data.message);
-
-//         alert('Login successful!');
-//         localStorage.setItem('token', data.token); // Store token for authentication
-//         window.location.href = '/home'; // Redirect to home page
-
-//     } catch (error) {
-//         alert(error.message);
-//     }
-// }
 async function loginSubmit(email, password) {
     try {
         const response = await fetch('/api/auth/login', {
@@ -225,13 +206,7 @@ async function loginSubmit(email, password) {
 
         alert('Login successful!');
         localStorage.setItem('token', data.token); // Store token for authentication
-
-        // Redirect based on user role
-        if (data.redirectTo) {
-            window.location.href = data.redirectTo;
-        } else {
-            window.location.href = '/auth/role-selection'; // Default redirect if no role is set
-        }
+        window.location.href = '/home'; // Redirect to home page
 
     } catch (error) {
         alert(error.message);

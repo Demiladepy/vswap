@@ -18,6 +18,14 @@ router.get('/role-selection', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/auth', 'UserSelectorPage.html'));
 });
 
+router.get('/role-selection', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/auth', 'UserSelectorPage.html'));
+});
+
+router.get('/register-shop', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/auth', 'register-shop.html'));
+});
+
 // Other Attendant-specific routes can be added here
 
 module.exports = router;
