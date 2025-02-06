@@ -77,6 +77,10 @@ router.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/shopOwner', 'HomePage.html'));
 });
 
+router.get('/manage-attendants', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/shopOwner', 'manageAttendants.html'));
+});
+
 // Shop Registration Route
 router.post('/register-shop', async (req, res) => {
     const { name, type, location, ownerId } = req.body;

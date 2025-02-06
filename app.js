@@ -10,10 +10,6 @@ const shopOwnerRoutes = require('./routes/shopOwnerRoutes');
 const authRoutess = require('./routes/authRoutes');
 const session = require('express-session');
 
-
-
-// Other routes...
-
 // Load environment variables
 dotenv.config();
 require('dotenv').config(); 
@@ -22,6 +18,11 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+
+// Set the views directory and EJS as the templating engine
+// app.set('views', path.join(__dirname, 'view'));
+// // Set EJS as the view engine
+// app.set('view engine', 'ejs');
 
 // Middleware setup
 app.use(session({

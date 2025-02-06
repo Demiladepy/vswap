@@ -8,12 +8,6 @@ const User = require('../models/User');
 
 const router = express.Router();
 
-
-
-
-
-
-
 router.post('/signup', async (req, res) => {
   try {
     console.log('Request body:', req.body); // Debugging
@@ -56,10 +50,6 @@ router.post('/logout', (req, res) => {
     res.status(200).json({ message: 'Logged out successfully' });
   });
 });
-
-
-
-
 
 // router.post('/signup', async (req, res) => {
 //   try {
@@ -294,8 +284,5 @@ router.post('/update-role', async (req, res) => {
 //   }
 // });
 
-
-
-  
 
 module.exports = router;
