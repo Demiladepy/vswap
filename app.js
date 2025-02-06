@@ -7,6 +7,7 @@ const authRoutes = require('./routes/auth');
 const superAdminRoutes = require('./routes/superAdminRoutes');
 const attendantRoutes = require('./routes/attendantRoutes');
 const shopOwnerRoutes = require('./routes/shopOwnerRoutes');
+const authRoutess = require('./routes/authRoutes');
 
 // Load environment variables
 dotenv.config();
@@ -32,10 +33,11 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch(err => console.log(err));
 
 // Use Routes
-app.use('/auth', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/superadmin', superAdminRoutes);
 app.use('/attendant', attendantRoutes);
 app.use('/shopowner', shopOwnerRoutes);
+app.use('/auth', authRoutess);
 
 // Serve static files from public folder
 app.use(express.static(path.join(__dirname, 'public')));
