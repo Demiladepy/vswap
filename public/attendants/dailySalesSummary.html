@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mona App - Daily Sales Summary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white text-black font-sans">
+    <!-- Navigation -->
+    <nav class="bg-yellow-400 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-chart-bar text-black text-2xl mr-3"></i>
+                <span class="text-2xl font-bold text-black">Daily Sales Summary</span>
+            </div>
+            <div class="space-x-4">
+                <a href="dashboard.html" class="text-black hover:text-yellow-800 transition duration-300">Dashboard</a>
+                <a href="transactions.html" class="text-black hover:text-yellow-800 transition duration-300">Transactions</a>
+                <a href="reports.html" class="text-black hover:text-yellow-800 transition duration-300">Reports</a>
+                <a href="index.html" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Daily Sales Summary Section -->
+    <section id="sales-summary" class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-black">Daily Sales Summary</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-dollar-sign text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Total Sales</h3>
+                    <p class="text-gray-700 text-lg font-semibold">$0.00</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-box-open text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Top-Selling Item</h3>
+                    <p class="text-gray-700 text-lg font-semibold">N/A</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <i class="fas fa-chart-line text-4xl text-black mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Total Revenue</h3>
+                    <p class="text-gray-700 text-lg font-semibold">$0.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Transactions Table -->
+    <section id="sales-transactions" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-black">Sales Transactions</h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300">
+                    <thead>
+                        <tr class="bg-yellow-400 text-black">
+                            <th class="py-3 px-4 border">Date</th>
+                            <th class="py-3 px-4 border">Product</th>
+                            <th class="py-3 px-4 border">Quantity</th>
+                            <th class="py-3 px-4 border">Total Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 border text-center" colspan="4">No sales recorded yet</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-yellow-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Mona App. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-white">Privacy Policy</a>
+                <a href="#" class="hover:text-white">Terms of Service</a>
+                <a href="#" class="hover:text-white">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

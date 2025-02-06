@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Sales - Mona App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-white text-black font-sans">
+    <nav class="bg-yellow-400 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-user text-black text-2xl mr-3"></i>
+                <span class="text-2xl font-bold text-black">Mona Attendant</span>
+            </div>
+            <div class="space-x-4">
+                <a href="dashboard.html" class="text-black hover:text-yellow-800 transition duration-300">Dashboard</a>
+                <a href="transactions.html" class="text-black hover:text-yellow-800 transition duration-300">Transactions</a>
+                <a href="reports.html" class="text-black hover:text-yellow-800 transition duration-300">Reports</a>
+                <a href="index.html" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-16 bg-yellow-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-black">Process Sales</h2>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label class="block text-black font-bold">Select Product</label>
+                    <select id="product" class="w-full p-2 border rounded">
+                        <option value="product1" data-price="10">Product 1 - $10</option>
+                        <option value="product2" data-price="20">Product 2 - $20</option>
+                        <option value="product3" data-price="15">Product 3 - $15</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black font-bold">Quantity</label>
+                    <input type="number" id="quantity" class="w-full p-2 border rounded" min="1" value="1">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-black font-bold">Total Price</label>
+                    <input type="text" id="total" class="w-full p-2 border rounded bg-gray-200" readonly>
+                </div>
+                <button onclick="processSale()" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300 w-full">Checkout</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-yellow-400 py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Mona App. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('product').addEventListener('change', updateTotal);
+        document.getElementById('quantity').addEventListener('input', updateTotal);
+
+        function updateTotal() {
+            let product = document.getElementById('product');
+            let price = product.options[product.selectedIndex].getAttribute('data-price');
+            let quantity = document.getElementById('quantity').value;
+            document.getElementById('total').value = `$${(price * quantity).toFixed(2)}`;
+        }
+
+        function processSale() {
+            alert('Sale processed successfully!');
+        }
+    </script>
+</body>
+</html>

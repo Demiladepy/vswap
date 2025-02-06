@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Reports - Mona App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-black font-sans">
+    <!-- Navigation -->
+    <nav class="bg-yellow-400 p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-user text-black text-2xl mr-3"></i>
+                <span class="text-2xl font-bold text-black">Mona Attendant</span>
+            </div>
+            <div class="space-x-4">
+                <a href="dashboard.html" class="text-black hover:text-yellow-800 transition duration-300">Dashboard</a>
+                <a href="process_sales.html" class="text-black hover:text-yellow-800 transition duration-300">Process Sales</a>
+                <a href="reports.html" class="text-black hover:text-yellow-800 transition duration-300">Reports</a>
+                <a href="index.html" class="bg-black text-yellow-400 px-4 py-2 rounded hover:bg-yellow-800 transition duration-300">Logout</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Reports Section -->
+    <section class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-8 text-black">Generate Reports</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-3">Daily Sales Report</h3>
+                <p class="text-gray-700">View sales performance for the day.</p>
+                <button class="bg-yellow-400 text-black px-4 py-2 rounded mt-4">Generate</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-3">Weekly Sales Report</h3>
+                <p class="text-gray-700">Track sales trends over the past week.</p>
+                <button class="bg-yellow-400 text-black px-4 py-2 rounded mt-4">Generate</button>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold mb-3">Monthly Sales Report</h3>
+                <p class="text-gray-700">Analyze monthly revenue trends.</p>
+                <button class="bg-yellow-400 text-black px-4 py-2 rounded mt-4">Generate</button>
+            </div>
+        </div>
+        
+        <div class="mt-12 text-center">
+            <button class="bg-black text-yellow-400 px-6 py-3 rounded-lg shadow-md">Download Reports</button>
+        </div>
+    </section>
+</body>
+</html>

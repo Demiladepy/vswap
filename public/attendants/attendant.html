@@ -73,28 +73,42 @@
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-3">Low Stock Alerts</h3>
                     <p class="text-gray-700">Notify attendants when stock is running low.</p>
+                    <div class="mt-4">
+                        <label for="low-stock-threshold" class="block text-black font-semibold">Set Low Stock Threshold:</label>
+                        <select id="low-stock-threshold" class="mt-2 p-2 border rounded w-full">
+                            <option value="5">5 Items</option>
+                            <option value="10">10 Items</option>
+                            <option value="20">20 Items</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-3">Auto-Update Inventory</h3>
                     <p class="text-gray-700">Deduct sold items from stock automatically.</p>
+                    <div class="mt-4">
+                        <label for="auto-update-toggle" class="block text-black font-semibold">Enable Auto-Update:</label>
+                        <select id="auto-update-toggle" class="mt-2 p-2 border rounded w-full">
+                            <option value="enabled">Enabled</option>
+                            <option value="disabled">Disabled</option>
+                        </select>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Sales Reporting & Analytics -->
     <section id="sales-reporting" class="py-16 bg-white">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-8 text-black">Sales Reporting & Analytics</h2>
-            <div class="grid md:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 gap-8">
                 <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-3">Daily Sales Summary</h3>
                     <p class="text-gray-700">Track total sales, top-selling items, and revenue.</p>
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-bold mb-3">Attendant Performance</h3>
-                    <p class="text-gray-700">Show how much each attendant sold.</p>
-                </div>
+
                 <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
                     <h3 class="text-xl font-bold mb-3">Trends & Insights</h3>
                     <p class="text-gray-700">Identify popular products and sales patterns.</p>
