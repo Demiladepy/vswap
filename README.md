@@ -1,4 +1,4 @@
-# Mona App - Sales Tracking System
+# vswap- Sales Tracking System
 
 ## 📌 Problem Statement
 Small and medium-sized enterprises (SMEs) struggle with:
@@ -8,12 +8,12 @@ Small and medium-sized enterprises (SMEs) struggle with:
 4. **Financial Planning Issues:** Poor stock management due to missing sales data.
 5. **Expensive Solutions:** Existing tools are costly for small businesses.
 
-**Mona App** solves these problems by offering an affordable, automated, and easy-to-use sales tracking solution.
+**vswap** solves these problems by offering an affordable, automated, and easy-to-use sales tracking solution.
 
 
 ## 🏗️ Folder Structure
 ```
-📦 mona-app
+📦 vswap
  ┣ 📂 backend               # Express.js backend
  ┃ ┣ 📂 models              # Mongoose models
  ┃ ┣ 📂 routes              # API routes
