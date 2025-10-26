@@ -1,4 +1,4 @@
-# vswap- Sales Tracking System
+# VSwap - Smart Sales Tracking System
 
 ## 📌 Problem Statement
 Small and medium-sized enterprises (SMEs) struggle with:
@@ -8,12 +8,12 @@ Small and medium-sized enterprises (SMEs) struggle with:
 4. **Financial Planning Issues:** Poor stock management due to missing sales data.
 5. **Expensive Solutions:** Existing tools are costly for small businesses.
 
-**vswap** solves these problems by offering an affordable, automated, and easy-to-use sales tracking solution.
+**VSwap** solves these problems by offering an affordable, automated, and easy-to-use sales tracking solution.
 
 
 ## 🏗️ Folder Structure
 ```
-📦 vswap
+📦 VSwap
  ┣ 📂 backend               # Express.js backend
  ┃ ┣ 📂 models              # Mongoose models
  ┃ ┣ 📂 routes              # API routes
@@ -51,8 +51,8 @@ Small and medium-sized enterprises (SMEs) struggle with:
 ## 🔧 Installation & Setup
 ### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/your-repo/mona-app.git
-cd mona-app
+git clone https://github.com/your-repo/vswap.git
+cd vswap
 ```
 
 ### **2️⃣ Install Backend Dependencies**
@@ -98,5 +98,5 @@ Simply open `frontend/index.html` in your browser.
 - **AI-driven Sales Predictions** for better decision-making.
 - **Integration with Accounting Software.**
 
-Mona App aims to empower SMEs with smart sales tracking at an affordable price! 🎉
+VSwap aims to empower SMEs with smart sales tracking at an affordable price! 🎉
 
